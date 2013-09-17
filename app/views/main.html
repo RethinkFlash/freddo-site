@@ -12,7 +12,7 @@
 <div class="row">
 	<div class="col col-lg-12 gallery-overflow">
 		<ul class="photo-gallery">
-			<li ng-repeat="image in albumModel | filter:searchFilter">
+			<li ng-repeat="image in albumData | filter:searchFilter">
 				<a ng-href="#" ng-click="displayPreview($index)"><img class="img-rounded photo-thumbnail" ng-src="images/photos/{{ image.thumb }}" alt="{{ image.title }}"/></a>
 			</li>
 		</ul>
