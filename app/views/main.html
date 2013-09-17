@@ -1,9 +1,20 @@
-<div class="hero-unit">
-  <h1>'Allo, 'Allo!</h1>
-  <p>You now have</p>
-  <ul>
-      <li ng-repeat="thing in awesomeThings">{{thing}}</li>
-  </ul>
-  <p>installed.</p>
-  <h3>Enjoy coding! - Yeoman</h3>
+<div class="row">
+	<div class="col col-lg-3 freddo-header">
+		<img ng-src="/images/freddo-header.png" alt="Freddo"/>
+	</div>
+</div>
+
+<div class="row">
+	<div id="filterInput" class="col col-lg-12">
+		<input type="text" ng-model="searchFilter" placeholder="filter"/>
+	</div>
+</div>
+<div class="row">
+	<div class="col col-lg-12 gallery-overflow">
+		<ul class="photo-gallery">
+			<li ng-repeat="image in albumModel | filter:searchFilter">
+				<a ng-href="#" ng-click="displayPreview($index)"><img class="img-rounded photo-thumbnail" ng-src="images/photos/{{ image.thumb }}" alt="{{ image.title }}"/></a>
+			</li>
+		</ul>
+	</div>
 </div>

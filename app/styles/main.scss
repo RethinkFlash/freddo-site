@@ -5,28 +5,96 @@ $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
 /* Put your CSS here */
 html, body {
-  margin: 20px;
+  margin: 21px;
 }
 
 body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+  background-color: #000;
+  overflow: hidden;
 }
 
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 300px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
+.freddo-header {
+  padding-bottom:30px;
+  margin-left: 10px;
 }
 
-.hero-unit h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+.main-container {
+  position: relative;
+  width: 1060px;
+  height: 750px;
+}
+
+#filterInput {
+  padding-left: 10px;
+  input {
+    width: 236px;
+    color: white;
+    background-color: black;
+  }
+}
+
+@media all and (max-width:1115px) {
+  .main-container {
+    width:790px;
+  }
+}
+
+@media all and (max-width:845px) {
+  .main-container {
+    width:525px;
+  }
+}
+
+@media all and (max-width:580px) {
+  .main-container {
+    width:250px;
+  }
+
+  #filterInput {
+    text-align: center;
+    padding-left: 0px;
+    input {
+      text-align: center;
+    }
+  }
+
+  .freddo-header {
+    //padding-bottom:30px;
+    margin-left: -5px;
+    margin-top: -30px;
+    margin-bottom: -17px;
+    text-align: center;
+  }
+}
+
+
+.photo-thumbnail :hover {
+  cursor: hand;
+}
+
+.gallery-overflow {
+  position: fixed;
+  overflow-y: overlay;
+  height: 650px;
+}
+
+.photo-gallery {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  ul {
+    //position: fixed;
+    list-style-type: none;
+    max-height: 600px;
+    height: auto;
+    top: 20px;
+  }
+  li {
+    float: left;
+    margin: 10px;
+    display: block;
+  }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('FreddoApp', [])
+angular.module('FreddoApp',[])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
