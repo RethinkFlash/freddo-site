@@ -1,19 +1,28 @@
-$iconSpritePath: "../images/glyphicons-halflings.png";
-$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+//$iconSpritePath: "../images/glyphicons-halflings.png";
+//$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
-@import "bootstrap-sass/lib/bootstrap";
+@import "sass-bootstrap-3.0.16/sass/sass-bootstrap";
+@import "compass/css3/border-radius";
+
+$alignment-left-li-bumper: 10px;
+$alignment-left-filter-bumper: 15px;
 
 /* Put your CSS here */
-html, body {
-  margin: 21px;
-}
+//::-webkit-scrollbar {
+//  display:block;
+//}
 
+html, body {
+  margin-top: 21px;
+}
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
   background-color: #000;
-  overflow: hidden;
+
+
+  //overflow: hidden;
 }
 
 .freddo-header {
@@ -21,64 +30,72 @@ body {
   margin-left: 10px;
 }
 
-.main-container {
-  position: relative;
-  width: 1060px;
-  height: 750px;
-}
+//.main-container {
+//  position: relative;
+//  width: 1060px;
+//  height: 750px;
+//}
 
 #filterInput {
-  padding-left: 10px;
+  padding-left: $alignment-left-filter-bumper + $alignment-left-li-bumper;
   input {
-    width: 236px;
+    width: 250px;
     color: white;
     background-color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    @include border-radius(10px);
   }
 }
 
-@media all and (max-width:1115px) {
-  .main-container {
-    width:790px;
+@media all and (min-width:320px) {
+  .gallery-container {
+    max-width:250px;
   }
 }
 
-@media all and (max-width:845px) {
-  .main-container {
-    width:525px;
+@media all and (min-width:641px) {
+  .gallery-container {
+    max-width:570px;
   }
 }
 
-@media all and (max-width:580px) {
-  .main-container {
-    width:250px;
-  }
-
-  #filterInput {
-    text-align: center;
-    padding-left: 0px;
-    input {
-      text-align: center;
-    }
-  }
-
-  .freddo-header {
-    //padding-bottom:30px;
-    margin-left: -5px;
-    margin-top: -30px;
-    margin-bottom: -17px;
-    text-align: center;
+@media all and (min-width:961px) {
+  .gallery-container {
+    max-width:840px;
   }
 }
+
+@media all and (min-width:1136px) {
+  .gallery-container {
+    max-width:1110px;
+  }
+}
+
+
+//@media all and (max-width:340px) {
+//
+//  #filterInput {
+//    display: block;
+//    text-align: center;
+//    padding-left: 0px;
+//    input {
+//      text-align: center;
+//    }
+//  }
+//
+//  .freddo-header {
+//    //padding-bottom:30px;
+//    margin-left: -5px;
+//    margin-top: -30px;
+//    margin-bottom: -17px;
+//    text-align: center;
+//  }
+//}
 
 
 .photo-thumbnail :hover {
   cursor: hand;
-}
-
-.gallery-overflow {
-  position: fixed;
-  overflow-y: overlay;
-  height: 650px;
 }
 
 .photo-gallery {
@@ -88,13 +105,17 @@ body {
   ul {
     //position: fixed;
     list-style-type: none;
-    max-height: 600px;
+    //max-height: 600px;
     height: auto;
     top: 20px;
   }
   li {
     float: left;
-    margin: 10px;
+    margin: $alignment-left-li-bumper;
     display: block;
   }
+}
+
+.gallery-row {
+  margin: 0 auto;
 }

@@ -11,7 +11,7 @@ angular.module('FreddoApp')
 					$scope.albumData = data;
 				})
 				.error(function() {
-					console.log("error");
+					console.log('error');
 				});
 		};
 
